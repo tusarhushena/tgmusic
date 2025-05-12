@@ -153,7 +153,7 @@ async def broadcast(_: Client, message: types.Message):
         instead of forwarding it.
     The targets of the broadcast can be specified as "all", "users", or "chats".
     """
-    if int(message.from_id) != OWNER_ID:
+    if int(message.from_id) not in ALLOWED_USERS:
         await del_msg(message)
         return None
 
