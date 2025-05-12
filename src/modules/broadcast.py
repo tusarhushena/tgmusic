@@ -12,6 +12,8 @@ from src.helpers import db
 from src.logger import LOGGER
 from src.modules.utils import Filter
 from src.modules.utils.play_helpers import del_msg, extract_argument
+from src.modules.devs import ALLOWED_USERS
+
 
 REQUEST_LIMIT = 50
 BATCH_SIZE = 500
