@@ -4,10 +4,9 @@
 
 
 PmStartText = """
-Hey {0}, 🥀
+<b>Hey</b> {0}, 🥀
 
 Welcome to <b>{1}</b>!
-Version: <b>v{2}</b>
 
 A fast, reliable and powerful Telegram music bot built with amazing features.
 
@@ -63,7 +62,6 @@ ChatOwnerCommands = """
 /reload – Refresh the list of admins in the group.
 /buttons – Toggle playback buttons display.
 /thumb – Toggle thumbnail display.
-/autoend [on/off] – Automatically ends voice chats when no one is listening.
 """
 
 BotDevsCommands = """
