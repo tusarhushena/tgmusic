@@ -63,7 +63,7 @@ async def exec_eval(c: Client, m: types.Message):
     """
     Run python code.
     """
-    if int(message.from_id) not in ALLOWED_USERS:
+    if int(m.from_user.id) not in ALLOWED_USERS:
         return None
 
     text = m.text.split(None, 1)
