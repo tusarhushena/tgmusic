@@ -28,6 +28,33 @@ from src.modules.utils.strings import (
 )
 
 
+@Client.on_message(filters=Filter.command(["start", "help"]))
+async def start_cmd(c: Client, message: types.Message):
+    """
+    Handle the /start and /help command to welcome users.
+    """
+    chat_id = message.chat_id
+    bot_name = c.me.first_name
+    if chat_id < 0:
+        text = StartText.format(await message.mention(), bot_name, SUPPORT_GROUP)
+        reply = await message.reply_text(
+            text=text,
+            disable_web_page_preview=True,
+            reply_markup=SupportButton,
+        )
+        if isinstance(reply, types.Error):
+            c.logger.warning(f"Error sending start message: {reply.message}")
+        return None
+
+    text = PmStartText.format(await message.mention(), bot_name, __version__)
+    bot_username = c.me.usernames.editable_username
+    reply = await message.reply_text(text, reply_markup=add_me_markup(bot_username))
+    if isinstance(reply, types.Error):
+        c.logger.warning(f"Error sending start message: {reply.message}")
+
+    return None
+
+
 @Client.on_message(filters=Filter.command("privacy"))
 async def privacy_handler(c: Client, message: types.Message):
     """
@@ -184,7 +211,7 @@ async def song_cmd(c: Client, message: types.Message):
     """Handle the /song command."""
     args = extract_argument(message.text)
     reply = await message.reply_text(
-        f"🎶 USE: <code>@HarryXRobot {args or 'song name'}</code>"
+        f"🎶 USE: <code>@HarryXRobot"
     )
     if isinstance(reply, types.Error):
         c.logger.warning(f"Error sending message: {reply}")
@@ -219,7 +246,7 @@ async def callback_query_help(c: Client, message: types.UpdateNewCallbackQuery) 
             "markup": BackHelpMenu,
         },
         "help_owner": {
-            "answer": "Owner Help Menu",
+            "answer": "Chat Owner Help Menu",
             "text": ChatOwnerCommands,
             "markup": BackHelpMenu,
         },
