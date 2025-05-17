@@ -4,13 +4,15 @@
 
 
 PmStartText = """
-<b>Hey</b> {0}, 🥀
+<b>нєу {0}, </b> 🥀
 
-Welcome to <b>{1}</b>!
+๏ ᴛʜɪs ɪs {1} !
 
-A fast, reliable and powerful Telegram music bot built with amazing features.
+➻ ᴀ ғᴀsᴛ & ᴘᴏᴡᴇʀғᴜʟ ᴛᴇʟᴇɢʀᴀᴍ ᴍᴜsɪᴄ ᴘʟᴀʏᴇʀ ʙᴏᴛ ᴡɪᴛʜ sᴏᴍᴇ ᴀᴡᴇsᴏᴍᴇ ғᴇᴀᴛᴜʀᴇs.
 
-<b>Supported Platforms:</b> YouTube, Spotify, Apple Music and SoundCloud.
+<b><u>Sᴜᴘᴘᴏʀᴛᴇᴅ Pʟᴀᴛғᴏʀᴍs</u></b> : ʏᴏᴜᴛᴜʙᴇ, sᴘᴏᴛɪғʏ, ʀᴇssᴏ, ᴀᴘᴘʟᴇ ᴍᴜsɪᴄ ᴀɴᴅ sᴏᴜɴᴅᴄʟᴏᴜᴅ.
+──────────────────
+<b>๏ ᴜsᴇ /help ɢᴇᴛ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴍʏ ᴍᴏᴅᴜʟᴇs ᴀɴᴅ ᴄᴏᴍᴍᴀɴᴅs.</b>
 """
 
 StartText = """
