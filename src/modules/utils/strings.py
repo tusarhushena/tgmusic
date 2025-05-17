@@ -4,15 +4,13 @@
 
 
 PmStartText = """
-<b>нєу {0}, </b> 🥀
+Hey {0}, 🥀
 
-๏ ᴛʜɪs ɪs {1} !
+Welcome to <b>{1}</b>!
 
-➻ ᴀ ғᴀsᴛ & ᴘᴏᴡᴇʀғᴜʟ ᴛᴇʟᴇɢʀᴀᴍ ᴍᴜsɪᴄ ᴘʟᴀʏᴇʀ ʙᴏᴛ ᴡɪᴛʜ sᴏᴍᴇ ᴀᴡᴇsᴏᴍᴇ ғᴇᴀᴛᴜʀᴇs.
+A fast, reliable and powerful Telegram music bot built with amazing features.
 
-<b><u>Sᴜᴘᴘᴏʀᴛᴇᴅ Pʟᴀᴛғᴏʀᴍs</u></b> : ʏᴏᴜᴛᴜʙᴇ, sᴘᴏᴛɪғʏ, ʀᴇssᴏ, ᴀᴘᴘʟᴇ ᴍᴜsɪᴄ ᴀɴᴅ sᴏᴜɴᴅᴄʟᴏᴜᴅ.
-──────────────────
-<b>๏ ᴜsᴇ /help ɢᴇᴛ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ᴍʏ ᴍᴏᴅᴜʟᴇs ᴀɴᴅ ᴄᴏᴍᴍᴀɴᴅs.</b>
+<b>Supported Platforms:</b> YouTube, Spotify, Apple Music and SoundCloud.
 """
 
 StartText = """
@@ -64,6 +62,7 @@ ChatOwnerCommands = """
 /reload – Refresh the list of admins in the group.
 /buttons – Toggle playback buttons display.
 /thumb – Toggle thumbnail display.
+/autoend [on/off] – Automatically ends voice chats when no one is listening.
 """
 
 BotDevsCommands = """
